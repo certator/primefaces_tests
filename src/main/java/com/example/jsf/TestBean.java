@@ -18,7 +18,7 @@ import javax.faces.bean.SessionScoped;
 @Named
 @Scope("session") //need this, JSR-330 in Spring context is singleton by default
 
-public class TestBean {
+public class TestBean implements java.io.Serializable {
 	public TestBean() {
 		System.out.println("init TestBean");
 	}
