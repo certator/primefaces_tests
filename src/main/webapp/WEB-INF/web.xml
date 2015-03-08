@@ -45,4 +45,16 @@
 		<mime-type>text/javascript</mime-type>
 	</mime-mapping>
 	
+	<!--  spring configuration -->
+	 <context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/applicationContext.xml</param-value>
+	  </context-param>
+	
+    <listener>
+        <listener-class>
+            org.springframework.web.context.request.RequestContextListener
+        </listener-class>
+    </listener>
+	
 </web-app>
