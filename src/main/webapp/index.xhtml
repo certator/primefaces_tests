@@ -19,5 +19,10 @@
 			styleClass="ui-priority-primary" />
 		<h:outputText id="out_item" value="#{testBean.out_str}" />
 	</h:form>
+	<pe:inputNumber id="Input3" value="123"
+		minValue="-1000.999" maxValue="1000">
+		<p:ajax event="blur" />
+	</pe:inputNumber>
+
 </h:body>
 </html>
