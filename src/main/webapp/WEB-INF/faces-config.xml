@@ -16,4 +16,12 @@
 <!-- 		<component-type>org.primefaces.component.Tree</component-type> -->
 <!-- 		<component-class>org.pivot4j.analytics.component.tree.Tree</component-class> -->
 <!-- 	</component> -->
+
+	<application>
+		<el-resolver>
+    		    org.springframework.web.jsf.el.SpringBeanFacesELResolver
+		</el-resolver>
+  	</application>
+
+
 </faces-config>
