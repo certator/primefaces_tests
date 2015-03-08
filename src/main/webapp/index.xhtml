@@ -13,6 +13,11 @@
 
 <h:body id="body">
 	<h:outputText value="#{testBean.getTestStr()}" />
-
+	<h:form>
+		<p:commandButton value="Ajax Submit" id="ajax" update="out_item"
+			actionListener="#{testBean.buttonAction}"
+			styleClass="ui-priority-primary" />
+		<h:outputText id="out_item" value="#{testBean.out_str}" />
+	</h:form>
 </h:body>
 </html>

@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 import com.example.spring.TestSpringService;
 
 import javax.faces.bean.SessionScoped;
+import javax.faces.event.ActionEvent;
 
 
 @Named
@@ -28,7 +29,17 @@ public class TestBean implements java.io.Serializable {
 
 	@Inject
 	private TestSpringService testSpringBean;
+	
+	private String out_str = "s ";
 
+
+	public String getOut_str() {
+		return out_str;
+	}
+
+	public void setOut_str(String out_str) {
+		this.out_str = out_str;
+	}
 
 	public void setTestSpringBean(TestSpringService testSpringBean) {
 		this.testSpringBean = testSpringBean;
@@ -50,4 +61,10 @@ public class TestBean implements java.io.Serializable {
 		return " test string " + testDepend.getDependStr()
 				+ testSpringBean.getSpringStr();
 	}
+	
+    public void buttonAction(ActionEvent actionEvent) {
+    	System.out.println("buttonAction");
+        out_str += " a ";
+    }
+	
 }

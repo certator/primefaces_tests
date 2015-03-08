@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 @Named
-public class TestSpringServiceImpl implements TestSpringService {
+public class TestSpringServiceImpl implements TestSpringService, java.io.Serializable {
 
 	public TestSpringServiceImpl() {
 		System.out.println("init TestSpringServiceImpl");
