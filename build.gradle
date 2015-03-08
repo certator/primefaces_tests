@@ -1,0 +1,48 @@
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'eclipse-wtp'
+
+eclipse {
+
+  //if you want parts of paths in resulting file(s) to be replaced by variables (files):
+  //pathVariables 'GRADLE_HOME': file('/best/software/gradle'), 'TOMCAT_HOME': file('../tomcat')
+
+  wtp {
+    component {
+      //for examples see docs for EclipseWtpComponent
+    }
+
+    facet {
+      //for examples see docs for EclipseWtpFacet
+    }
+  }
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+    compile group: 'javax.servlet', name: 'jstl', version:'1.2'
+    compile group: 'org.primefaces', name: 'primefaces', version:'5.0'
+    
+    /*
+    compile group: 'org.primefaces.extensions', name: 'primefaces-extensions', version:'2.0.0'
+    compile group: 'org.primefaces.extensions', name: 'resources-codemirror', version:'2.0.0'
+    
+    compile group: 'org.primefaces.themes', name: 'black-tie', version:'1.0.10'
+    compile group: 'org.primefaces.themes', name: 'bootstrap', version:'1.0.10'
+    compile group: 'org.primefaces.themes', name: 'cruze', version:'1.0.10'
+    compile group: 'org.primefaces.themes', name: 'humanity', version:'1.0.10'
+    compile group: 'org.primefaces.themes', name: 'redmond', version:'1.0.10'
+    compile group: 'org.primefaces.themes', name: 'rocket', version:'1.0.10'
+    */
+    
+    compile group: 'org.apache.myfaces.core', name: 'myfaces-api', version:'2.2.3'
+    compile group: 'org.apache.myfaces.core', name: 'myfaces-impl', version:'2.2.3'
+
+    providedCompile group: 'javax.servlet', name: 'servlet-api', version:'2.5'
+    providedCompile group: 'javax.servlet.jsp', name: 'jsp-api', version:'2.1'
+    providedCompile group: 'javax.el', name: 'javax.el-api', version:'3.0.0'
+    
+}
