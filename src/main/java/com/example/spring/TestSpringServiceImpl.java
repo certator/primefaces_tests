@@ -62,5 +62,11 @@ public class TestSpringServiceImpl implements TestSpringService,
 	{
 		return (Message) sessionFactory.getCurrentSession().get(Message.class, id);
 	}
+
+	@Override
+	public Long saveMessage(Message m) {
+		sessionFactory.getCurrentSession().save(m);
+		return m.getId();
+	}
 	
 }
