@@ -3,6 +3,7 @@ package com.example.jsf;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
+import javax.faces.bean.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
@@ -20,12 +21,13 @@ import com.example.spring.TestSpringService;
 
 import javax.faces.bean.SessionScoped;
 import javax.faces.event.ActionEvent;
+
 import org.springframework.transaction.annotation.Propagation;
 
 
 @Named
-@Scope("session") //need this, JSR-330 in Spring context is singleton by default
-
+//@Scope("session") //need this, JSR-330 in Spring context is singleton by default
+@ViewScoped
 public class TestBean implements java.io.Serializable {
 	public TestBean() {
 		System.out.println("init TestBean");
