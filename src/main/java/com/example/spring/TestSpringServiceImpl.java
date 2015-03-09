@@ -41,7 +41,12 @@ public class TestSpringServiceImpl implements TestSpringService,
 
 		}
 		
-		
+		try {
+			getMessageById(1L);
+		} catch (Exception e)
+		{
+			e.printStackTrace();
+		}
 
 		return " test spring ";
 	}
@@ -50,5 +55,12 @@ public class TestSpringServiceImpl implements TestSpringService,
 	public List<Message> getMessages()
 	{
 		return (List<Message>)sessionFactory.getCurrentSession().createQuery("from Message").list();
+		
 	}
+	
+	public Message getMessageById(Long id)
+	{
+		return (Message) sessionFactory.getCurrentSession().get(Message.class, id);
+	}
+	
 }

@@ -20,5 +20,6 @@ public interface TestSpringService {
 
 	public String getSpringStr();
 	public List<Message> getMessages();
+	public Message getMessageById(Long id);
 	
 }
