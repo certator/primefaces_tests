@@ -1,5 +1,7 @@
 package com.example.spring;
 
+import java.util.List;
+
 import javax.faces.bean.ManagedBean;
 
 import org.springframework.web.context.WebApplicationContext;
@@ -12,7 +14,11 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import com.example.model.Message;
+
 public interface TestSpringService {
 
 	public String getSpringStr();
+	public List<Message> getMessages();
+	
 }

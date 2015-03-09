@@ -1,5 +1,7 @@
 package com.example.jsf;
 
+import java.util.List;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
@@ -39,9 +41,21 @@ public class TestBean implements java.io.Serializable {
 	@Inject
 	private TestSpringService testSpringBean;
 	
+	public TestSpringService getTestSpringBean() {
+		return testSpringBean;
+	}
+
 	private String out_str = "s ";
 
+	private List<Message> messages;
 
+	public List<Message> getMessages() {
+		return messages;
+	}
+
+	public void setMessages(List<Message> messages) {
+		this.messages = messages;
+	}
 
 	public String getOut_str() {
 		return out_str;

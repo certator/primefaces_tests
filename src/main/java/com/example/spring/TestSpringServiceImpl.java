@@ -1,5 +1,7 @@
 package com.example.spring;
 
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
@@ -42,5 +44,11 @@ public class TestSpringServiceImpl implements TestSpringService,
 		
 
 		return " test spring ";
+	}
+	
+	@Transactional
+	public List<Message> getMessages()
+	{
+		return (List<Message>)sessionFactory.getCurrentSession().createQuery("from Message").list();
 	}
 }

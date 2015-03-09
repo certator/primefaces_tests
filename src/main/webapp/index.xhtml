@@ -13,16 +13,30 @@
 
 <h:body id="body">
 	<h:outputText value="#{testBean.getTestStr()}" />
-	<h:form>
-		<p:commandButton value="Ajax Submit" id="ajax" update="out_item"
+	<h:form id="foo">
+		<p:commandButton value="Ajax Submit" id="ajax" update="foo"
 			actionListener="#{testBean.buttonAction}"
 			styleClass="ui-priority-primary" />
 		<h:outputText id="out_item" value="#{testBean.out_str}" />
+		<p:dataTable var="msg" value="#{testBean.testSpringBean.getMessages()}">
+			<p:column headerText="Id">
+				<h:outputText value="#{msg.id}" />
+			</p:column>
+
+			<p:column headerText="Name">
+				<h:outputText value="#{msg.name}" />
+			</p:column>
+
+			<p:column headerText="Text">
+				<h:outputText value="#{msg.text}" />
+			</p:column>
+
+		</p:dataTable>
+
 	</h:form>
-	<pe:inputNumber id="Input3" value="123"
-		minValue="-1000.999" maxValue="1000">
+	<pe:inputNumber id="Input3" value="123" minValue="-1000.999"
+		maxValue="1000">
 		<p:ajax event="blur" />
 	</pe:inputNumber>
-
 </h:body>
 </html>
