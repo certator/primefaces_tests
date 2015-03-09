@@ -5,15 +5,22 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.PersistenceContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
+import com.example.model.Message;
 import com.example.spring.TestSpringService;
 
 import javax.faces.bean.SessionScoped;
 import javax.faces.event.ActionEvent;
+import org.springframework.transaction.annotation.Propagation;
 
 
 @Named
@@ -31,6 +38,7 @@ public class TestBean implements java.io.Serializable {
 	private TestSpringService testSpringBean;
 	
 	private String out_str = "s ";
+
 
 
 	public String getOut_str() {
@@ -64,7 +72,18 @@ public class TestBean implements java.io.Serializable {
 	
     public void buttonAction(ActionEvent actionEvent) {
     	System.out.println("buttonAction");
+    	getTestStr();
         out_str += " a ";
+        
+//        EntityManagerFactory factory = Persistence.createEntityManagerFactory("test");
+//        EntityManager em = factory.createEntityManager();
+//        em.getTransaction().begin();
+//        Message m = new Message();
+//        m.setName("name1");
+//        m.setText("text1");
+//        em.persist(m);
+//        em.getTransaction().commit();
+        
     }
 	
 }
