@@ -1,0 +1,13 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:pe="http://primefaces.org/ui/extensions"
+    xmlns:sec="http://www.springframework.org/security/tags"
+    xmlns:c="http://java.sun.com/jsp/jstl/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:outputText id="out_item1" value="test include 1" />
+    <h:outputText id="out_item2" value="#{testBean.out_str}" />
+    <br/>
+</ui:composition>

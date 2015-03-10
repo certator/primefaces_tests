@@ -10,6 +10,13 @@
 
 	<ui:define name="body_content">
 
+        <h:form id="inc_test">
+         <ui:include src="#{testBean.getPartialURL()}" />
+            <p:commandButton value="inc test" id="ajax" update="inc_test"
+                
+                styleClass="ui-priority-primary" />
+         
+        </h:form>        
 
 		<h:outputText value="#{testBean.getTestStr()}" />
 		<h:form id="foo">

@@ -86,6 +86,21 @@ public class TestBean implements java.io.Serializable {
 				+ testSpringBean.getSpringStr();
 	}
 	
+	private Integer inc_index = 0;
+
+	public String getPartialURL() {
+		if (inc_index == 0)
+		{
+			inc_index = 1;
+			return "/WEB-INF/partials/test_include.xhtml";
+		}
+		else
+		{
+			inc_index = 0;
+			return "/WEB-INF/partials/test_include2.xhtml";
+		}
+	}
+
     public void buttonAction(ActionEvent actionEvent) {
     	System.out.println("buttonAction");
     	getTestStr();
