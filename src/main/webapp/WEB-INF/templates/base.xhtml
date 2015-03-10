@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:sec="http://www.springframework.org/security/tags"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head>
+<title><ui:insert name="title" /></title>
+</h:head>
+<h:body id="body">
+    <sec:authorize ifAllGranted="ROLE_USER">
+        <p>Lorem ipsum dolor sit amet
+        <a href="j_spring_security_logout">logout</a>
+        </p>
+    </sec:authorize>
+    <sec:authorize ifNotGranted="ROLE_USER">
+        <p>Lorem ipsum dolor sit amet
+        <a href="spring_security_login">login</a>
+        </p>
+    </sec:authorize>
+    
+         <ui:insert name="body_content" />        
+    
+</h:body>
+</html>
