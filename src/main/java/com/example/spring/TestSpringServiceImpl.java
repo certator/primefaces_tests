@@ -24,6 +24,7 @@ public class TestSpringServiceImpl implements TestSpringService,
 
 	public TestSpringServiceImpl() {
 		System.out.println("init TestSpringServiceImpl");
+		
 	}
 
 	@Transactional
