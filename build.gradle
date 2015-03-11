@@ -57,6 +57,7 @@ dependencies {
     ext.hibernate_version = '4.3.8.Final';
     compile "org.hibernate:hibernate-core:${hibernate_version}"
     compile "org.hibernate:hibernate-entitymanager:${hibernate_version}"
+    compile "org.hibernate:hibernate-c3p0:${hibernate_version}"
     compile "javax.persistence:persistence-api:1.0.2"
     compile "org.apache.derby:derby:10.11.1.1"
     compile "org.springframework:spring-tx:${spring_version}"  
