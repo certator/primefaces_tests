@@ -28,38 +28,44 @@ repositories {
 }
 
 dependencies {
+    ext.spring_version = '4.1.5.RELEASE';
+
     //web
-    compile group: 'javax.servlet', name: 'jstl', version:'1.2'
-    compile group: 'org.primefaces', name: 'primefaces', version:'5.1'
+    compile 'javax.servlet:jstl:1.2'
+    compile 'org.primefaces:primefaces:5.1'
     compile 'org.primefaces.extensions:primefaces-extensions:3.0.0'    
-	compile 'org.springframework:spring-web:4.1.5.RELEASE'
-	compile 'org.springframework:spring-webmvc:4.1.5.RELEASE'
+	compile "org.springframework:spring-web:${spring_version}"
+	compile "org.springframework:spring-webmvc:${spring_version}"
     compile 'org.codehaus.jackson:jackson-mapper-asl:1.9.13'
     
     //security
-    compile 'org.springframework.security:spring-security-web:3.2.6.RELEASE'
-    compile 'org.springframework.security:spring-security-config:3.2.6.RELEASE'
-    compile 'org.springframework.security:spring-security-taglibs:3.2.6.RELEASE'
+    ext.spring_security_version = '3.2.6.RELEASE';
+    compile "org.springframework.security:spring-security-web:${spring_security_version}"
+    compile "org.springframework.security:spring-security-config:${spring_security_version}"
+    compile "org.springframework.security:spring-security-taglibs:${spring_security_version}"
 	
-    compile 'org.springframework.webflow:spring-webflow:2.4.1.RELEASE'
-    compile 'org.springframework.webflow:spring-binding:2.4.1.RELEASE'
-    compile 'org.springframework.webflow:spring-faces:2.4.1.RELEASE'       
+    ext.spring_webflow_version = '2.4.1.RELEASE';
+    compile "org.springframework.webflow:spring-webflow:${spring_webflow_version}"
+    compile "org.springframework.webflow:spring-binding:${spring_webflow_version}"
+    compile "org.springframework.webflow:spring-faces:${spring_webflow_version}"       
     
-    compile group: 'org.apache.myfaces.core', name: 'myfaces-api', version:'2.2.7'
-    compile group: 'org.apache.myfaces.core', name: 'myfaces-impl', version:'2.2.7'
+    ext.myfaces_version = '2.2.7';
+    compile "org.apache.myfaces.core:myfaces-api:${myfaces_version}"
+    compile "org.apache.myfaces.core:myfaces-impl:${myfaces_version}"
     
     //database
-    compile 'javax.persistence:persistence-api:1.0.2'
-    compile 'org.apache.derby:derby:10.11.1.1'
-    compile 'org.hibernate:hibernate-core:4.3.8.Final'
-    compile 'org.hibernate:hibernate-entitymanager:4.3.8.Final'
-    compile 'org.springframework:spring-tx:4.1.5.RELEASE'
-    compile 'org.springframework:spring-orm:4.1.5.RELEASE'
+    ext.hibernate_version = '4.3.8.Final';
+    compile "org.hibernate:hibernate-core:${hibernate_version}"
+    compile "org.hibernate:hibernate-entitymanager:${hibernate_version}"
+    compile "javax.persistence:persistence-api:1.0.2"
+    compile "org.apache.derby:derby:10.11.1.1"
+    compile "org.springframework:spring-tx:${spring_version}"  
+    compile "org.springframework:spring-orm:${spring_version}"
     
     
     //providedCompile
     providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
-    providedCompile group: 'javax.servlet.jsp', name: 'jsp-api', version:'2.2'
-    providedCompile group: 'javax.el', name: 'javax.el-api', version:'3.0.0'
+    providedCompile 'javax.servlet.jsp:jsp-api:2.2'
+    providedCompile 'javax.el:javax.el-api:3.0.0'
     
 }
