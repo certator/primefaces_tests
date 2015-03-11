@@ -5,8 +5,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 @XmlRootElement
+//@JsonIgnoreProperties(value = { "text" })
 @Entity
 public class Message {
 	@Id
@@ -14,6 +19,8 @@ public class Message {
 	private Long id;
 
 	private String name;
+    @JsonIgnore
+//    @JsonProperty(value = "text")
 	private String text;
 
 	public Long getId() {
@@ -32,7 +39,10 @@ public class Message {
 		this.name = name;
 	}
 
-	public String getText() {
+//    @JsonIgnore
+//    @JsonProperty(value = "text")
+    @XmlTransient
+    public String getText() {
 		return text;
 	}
 
